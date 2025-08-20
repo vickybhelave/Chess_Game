@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chess Game</title>
+  <link rel="stylesheet" href="T.CSS">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Modal for player names -->
+  <div class="modal" id="playerModal">
+    <div class="modal-content">
+      <h2>Game Setup</h2>
+      <div class="input-group">
+        <label for="whitePlayer">White Player (Moves First):</label>
+        <input type="text" id="whitePlayer" placeholder="Player 1" autofocus>
+      </div>
+      <div class="input-group">
+        <label for="blackPlayer">Black Player (Moves Second):</label>
+        <input type="text" id="blackPlayer" placeholder="Player 2">
+      </div>
+      <div class="input-group">
+        <label>Time Control (minutes):</label>
+        <div class="time-options">
+          <label><input type="radio" name="timeControl" value="5" checked> 5</label>
+          <label><input type="radio" name="timeControl" value="10"> 10</label>
+          <label><input type="radio" name="timeControl" value="30"> 15</label>
+          <label><input type="radio" name="timeControl" value="0"> No Time </label>
+        </div>
+      </div>
+      <button id="startGame" class="start-button">Start Game</button>
+    </div>
+  </div>
+
+  <div class="container" style="display:none;">
+    <h1>Chess Game - <span id="whiteName">Player 1</span> (White) vs <span id="blackName">Player 2</span> (Black)</h1>
+    
+    <canvas id="board" width="600" height="600"></canvas>
+    
+    <div class="controls">
+      <button id="restart">Restart</button>
+      <div id="timerDisplay">
+        <div class="timer" id="whiteTimer">∞</div>
+        <div id="turnText">Turn: White</div>
+        <div class="timer" id="blackTimer">∞</div>
+      </div>
+      <div id="status"></div>
+    </div>
+
+    <p class="note">
+      Click a piece to select, then click a highlighted square to move. No castling or en-passant. Pawn promotes to Queen automatically.
+      Made in ❤️ vicky bhelave .
+    </p>
+  </div>
+
+  <!-- Winner popup -->
+  <div class="winner-popup" id="winnerPopup">
+    <h2>Game Over!</h2>
+    <p id="winnerText">White wins by checkmate!</p>
+    <button onclick="closeWinnerPopup()">Close & New Game</button>
+  </div>
+
+  <!-- Audio elements -->
+  <audio id="clickSound" src="http://images.chesscomfiles.com/chess-themes/sounds/_MP3_/default/move-self.mp3" preload="auto"></audio>
+  <audio id="moveSound" src="https://www.soundjay.com/buttons/button-10.mp3" preload="auto"></audio>
+  <audio id="clapSound" src="https://www.soundjay.com/human/applause-01.mp3" preload="auto"></audio>
+</body>
+<script src="S.JS"></script>
+</html>
+`
+
+
+
+
+
+
+
